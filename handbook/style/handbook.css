@@ -84,7 +84,7 @@ body {
 }
 
 .widthbox {
-   background-image: url(home.jpg);
+   background-image: url(../img/home.jpg);
    width: 930px;
    height: 1240px;
  }
