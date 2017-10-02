@@ -1,0 +1,2 @@
+# cantheyfireme
+workers' rights
