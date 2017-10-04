@@ -9,7 +9,7 @@ body {
 .modal {
   display: none;
   position: absolute;
-  top: 15%;
+  top: 10%;
   width: 65%;
   padding: 3em;
   background-color: whitesmoke;
@@ -60,19 +60,23 @@ body {
 
 .x,
 .close,
-.modalButton {
+.modalButton,
+.showMore {
   cursor: pointer;
   padding: 0.25em;
 
 }
 
-.close {
+.close,
+.showMore {
   padding: 0.75em;
   border-radius: 12px;
 }
 
 .x:hover,
-.close:hover {
+.close:hover,
+.modalButton:hover,
+.showMore:hover {
   background-color: grey;
   color: gainsboro;
 }
@@ -81,6 +85,14 @@ body {
   padding: 1em;
   text-align: center;
   font-weight: 600;
+}
+
+.showMore {
+  padding-top: 0;
+}
+
+.hiddenList {
+  display: none;
 }
 
 .widthbox {
@@ -106,7 +118,13 @@ body {
    margin: 0.25em;
  }
 
- .acronym {
+ .acronym,
+ .emph {
    color: black;
    font-weight: 600;
+ }
+
+ .emph {
+   opacity: 0.8;
+   font-size: 20px;
  }
