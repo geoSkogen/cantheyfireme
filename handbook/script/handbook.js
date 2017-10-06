@@ -11,9 +11,27 @@ function initModals() {
   var xs = document.getElementsByClassName("x")
   var closes = document.getElementsByClassName("close")
 
+  var hides = document.getElementsByClassName("closeHide")
+
+  var showlist = document.getElementsByClassName("showMore")[0]
+  var hiddenlist = document.getElementsByClassName("hiddenList")[0]
+
+  showlist.addEventListener("click", function () {
+    hiddenlist.style.display = "block";
+    showlist.style.display = "none";
+  })
+
+  hides[0].addEventListener("click", hideList)
+  hides[1].addEventListener("click", hideList)
+
   for (let i = 0; i < butts.length; i++) {
     assignOpenModal(i)
     assignCloseModal(i)
+  }
+
+  function hideList() {
+    hiddenlist.style.display = "none";
+    showlist.style.display = "inline";
   }
 
   function assignOpenModal(index) {
