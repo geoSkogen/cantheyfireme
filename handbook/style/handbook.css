@@ -2,6 +2,18 @@ body {
   font-family: "Trebuchet MS", "Oswald", Helvetica, Arial, Sans-serif;
 }
 
+a:link,
+a:hover,
+a:active,
+a:visited {
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
+ul li {
+  margin: 0 0 0.5em 0;
+}
+
 #app {
   position: relative;
 }
@@ -26,6 +38,8 @@ body {
 .flexOuterCenter,
 .flexOuterColumn,
 .flexEnd,
+.flexStart,
+.toggle,
 .headband {
   display: flex;
   flex-flow: row wrap;
@@ -41,12 +55,18 @@ body {
   justify-content: flex-end;
 }
 
+.flexStart,
+.toggle {
+  justify-content: flex-start;
+}
+
 .flexOuterColumn {
   width: 40%;
 }
 
 .headband,
-.modalButton {
+.modalButton,
+.toggle {
   background-color: gainsboro;
   border-radius: 12px;
   opacity: 0.7;
@@ -61,8 +81,10 @@ body {
 .x,
 .close,
 .closeHide,
+.toggleHide,
 .modalButton,
-.showMore {
+.showMore,
+.toggle {
   cursor: pointer;
   padding: 0.25em;
 
@@ -70,6 +92,7 @@ body {
 
 .close,
 .closeHide,
+.toggleHide,
 .showMore {
   padding: 0.75em;
   border-radius: 12px;
@@ -78,13 +101,15 @@ body {
 .x:hover,
 .close:hover,
 .closeHide:hover,
+.toggleHide:hover,
 .modalButton:hover,
 .showMore:hover {
   background-color: grey;
   color: gainsboro;
 }
 
-.modalButton {
+.modalButton,
+.toggle {
   padding: 1em;
   text-align: center;
   font-weight: 600;
@@ -98,7 +123,8 @@ body {
   margin-top: 1em;
 }
 
-.closeHide {
+.closeHide,
+.toggleHide {
   padding: 0.4em;
   font-size: 14px;
 }
@@ -128,6 +154,11 @@ body {
    font-size: 36px;
    padding: 0;
    margin: 0.25em;
+ }
+
+ .toggle {
+   font-size: 22px;
+
  }
 
  .acronym,
