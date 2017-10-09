@@ -21,7 +21,7 @@ ul li {
 .modal {
   display: none;
   position: absolute;
-  top: 5%;
+  top: 2%;
   width: 65%;
   padding: 3em;
   background-color: whitesmoke;
@@ -139,6 +139,7 @@ ul li {
    background-image: url(../img/home.jpg);
    width: 930px;
    height: 1240px;
+   position: static;
  }
 
  h1,h2 {

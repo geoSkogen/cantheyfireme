@@ -22,23 +22,42 @@ function initModals() {
   var toggleNest = toggleSwitches[0].parentElement.parentElement
   var toggleIcons = document.getElementsByClassName("toggleIcon")
   var toggleHides = document.getElementsByClassName("toggleHide")
-
-
-  for (let i = 0; i < toggleHides.length; i++) {
-  //  test2.innerHTML += toggleHides[i].parentElement.parentElement.className + " "
-  }
+  var toggleHideObjects = []
+  var toggleHideIcons = []
+  var toggleHideToggles = []
 
  //an attempt to make the script a little more data-agnostic
+ //elements nestings that follow the established convention can be re-ordered
   for (let i = 0; i < toggleNest.childNodes.length; i++) {
     if (toggleNest.childNodes[i].className &&
       toggleNest.childNodes[i].className.indexOf("toggle") != -1) {
       toggleObjects.push(toggleNest.childNodes[i])
-      //test1.innerHTML += toggleNest.childNodes[i].className + " "
     }
   }
 
   for (let i = 0; i < toggleSwitches.length; i++) {
     assignToggle(i)
+  }
+
+  for (let i = 0; i < toggleHides.length; i++) {
+    toggleHideObjects.push(toggleHides[i].parentElement.parentElement)
+    toggleHideToggles.push(toggleHideObjects[i].previousElementSibling.childNodes[1])
+    toggleHideIcons.push(toggleHideToggles[i].childNodes[1])
+  }
+
+  for (let i = 0; i < toggleHideObjects.length; i++) {
+    assignToggleHide(i)
+  }
+
+  function assignToggleHide(index) {
+    toggleHides[index].addEventListener("click", function () {
+      var thisStyle = window.getComputedStyle(toggleHideObjects[index])
+      var thisDisp = thisStyle.getPropertyValue('display')
+     if (thisDisp == "block") {
+       toggleHideObjects[index].style.display = "none"
+       toggleHideIcons[index].innerHTML = "+"
+     }
+    })
   }
 
   function assignToggle(index) {
